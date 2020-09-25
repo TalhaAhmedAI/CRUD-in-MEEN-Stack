@@ -37,4 +37,15 @@ router.get("/list", (req, res) => {
   });
 });
 
+router.get("/:id", (req, res) => {
+  Employee.findById(req.params.id, (err, doc) => {
+    if (!err) {
+      res.render("employee/addOrEdit", {
+        viewTitle: "Update Employee",
+        employee: doc,
+      });
+    }
+  });
+});
+
 module.exports = router;
