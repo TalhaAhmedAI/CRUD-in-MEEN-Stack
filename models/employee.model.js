@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
-const employeesSchema = new mongoose.Schema({
+var employeeSchema = new mongoose.Schema({
   fullName: {
     type: String,
+    required: "This fielf is required",
   },
   email: {
     type: String,
@@ -15,4 +16,4 @@ const employeesSchema = new mongoose.Schema({
   },
 });
 
-mongoose.model("employee", employeesSchema);
+mongoose.model("Employee", employeeSchema);
